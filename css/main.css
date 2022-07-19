@@ -1,0 +1,110 @@
+body {
+    color: #333;
+    font: normal 14px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+:root {
+    --background-light: #fff;
+    --color-light: #333;
+
+}
+.cards-container {
+    width: 95vw;
+    margin: auto;
+    padding: 1em;
+}
+
+.card {
+    display: inline-block;
+    background: var(--background);
+    border: 1px solid #ccc;
+    box-shadow: 0 0 1em #ccc;    
+    padding: 1em;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card-header, .card-body, .card-footer {
+    display: block;
+    border-radius: 5px 5px 0 0;
+    padding: 0.5em 1em;
+    position: relative;
+}
+
+.card-image img{
+    width: 100%;
+    height: auto;
+}
+
+.header-avatar-box{
+    margin: 1em;
+    text-align: left;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+.avatar {
+    display: inline-block;
+    max-width: 50px;
+    border-radius: 50%;
+    background: #ccc;
+    vertical-align: middle;
+}
+
+.avatar-text-box{
+    display: inline-block;
+    margin-left: 1em;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.avatar-text-box h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.avatar-text-box p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.header-icon, .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: .8em;
+    margin: auto;
+}
+
+.content-text {
+    max-width: 70ch;
+    text-align: justify;
+}
+
+.card-footer {
+    display: block;
+    border-top: 1px solid rgb(241, 238, 238);
+}
+
+.likes-box {
+    line-height: normal;
+    vertical-align: middle;
+    padding: 0;
+}
+
+.likes-box li {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.likes-box .likes {
+    margin-left: .25rem;
+}
