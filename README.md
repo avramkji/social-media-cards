@@ -23,4 +23,9 @@ https://bugs.chromium.org/p/chromium/issues/detail?id=47416
 
 It would be my pleassure if you could share the solution if there is a solution I am not seeing.
 
-## 
+## Building the card elements
+
+While building the card elements I am using the `createElement` functionality, and setting `innerHTML` through a string in backticks. In my opinion this should not be done in practice because it's leaving us vulnerable to `XSS` attacks. To avoid this vulnerability I am omitting the variable parts from the strings that I pass into `innerHTML`, I am instead adding the variable parts using `innerText`, all in accordance to the data you've provided, of course. 
+
+I am doing this because we're building what seems like a social media where the data may theoretically contain `XSS` attempts such as `...<script>...` in some strings, `innerText`provides some layer of protection from this, but I don't know if it's a long term fix.
+
