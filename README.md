@@ -29,3 +29,8 @@ While building the card elements I am using the `createElement` functionality, a
 
 I am doing this because we're building what seems like a social media where the data may theoretically contain `XSS` attempts such as `...<script>...` in some strings, `innerText`provides some layer of protection from this, but I don't know if it's a long term fix.
 
+Here's a cool link I found in regards to `innerText`: 
+https://stackoverflow.com/questions/52707031/does-innertext-prevent-xss
+
+So, there is at least one case where `innerText` will not protect us from `XSS`, luckily in our case according to this link we're fine.
+
