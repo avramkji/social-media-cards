@@ -21,7 +21,7 @@ https://stackoverflow.com/questions/3595515/origin-null-is-not-allowed-by-access
 https://bugs.chromium.org/p/chromium/issues/detail?id=40787&q=ajax%20local&colspec=ID%20Stars%20Pri%20Area%20Feature%20Type%20Status%20Summary%20Modified%20Owner%20Mstone%20OS
 https://bugs.chromium.org/p/chromium/issues/detail?id=47416
 
-It would be my pleassure if you could share the solution if there is a solution I am not seeing.
+It would be awesome if you could share the solution with me.
 
 ## Building the card elements
 

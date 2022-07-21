@@ -1,8 +1,10 @@
+const increment = 4;
+let counter = 0;
+
 const create_card_header = (profile_image, name, date, source_type) => {
     const card_header = document.createElement("header");
     card_header.classList.add("card-header");
     card_header.innerHTML = `
-    <header class="card-header">
         <div class="header-avatar-box">
             <img alt="Avatar" class="avatar">
             <div class="avatar-text-box">
@@ -12,8 +14,7 @@ const create_card_header = (profile_image, name, date, source_type) => {
         </div>
         <div class="header-icon">
             <img alt="Icon" class="icon">
-        </div>
-    </header>`
+        </div>`
     card_header.querySelector(".avatar").src = profile_image;
     card_header.querySelector('.avatar-name').innerText = name;
     card_header.querySelector('.avatar-date').innerText = date;
@@ -76,15 +77,24 @@ const create_card = (index) => {
 }
 
 const render_cards = (index) => {
-    for(let i = index; i < index+4; i++) {
+    for(let i = index; i < index+increment; i++) {
         if(i <= data.length) {
             const card = create_card(i);
             document.querySelector('.cards-container').appendChild(card);
-        } else {break}
+            counter++;
+        } else {
+            return counter;
+        }
     }
 
-    return index > data.length ? data.length : index + 4;
+    return counter++;
 }
 
-console.log(render_cards(0));
-console.log(render_cards(4));
+console.log(render_cards(counter));
+
+const load_more = () => {
+    render_cards(counter);
+    setTimeout(() => {
+        window.scrollTo(0, document.body.scrollHeight);
+    }, 250);
+}

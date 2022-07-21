@@ -1,15 +1,24 @@
+:root {
+    --background-light: #fff;
+    --color-light: #333;
+}
+
 body {
-    color: #333;
+    color: var(--color-light);
     font: normal 14px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
 }
-:root {
-    --background-light: #fff;
-    --color-light: #333;
 
+p {
+    font-size: 1em;
 }
+
+h2 {
+    font-size: 1.2em;
+}
+
 .cards-container {
     width: 95vw;
     margin: auto;
@@ -37,13 +46,13 @@ body {
     position: relative;
 }
 
-.card-image img{
+.card-image img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1.5;
 }
 
 .header-avatar-box{
-    margin: 1em;
+    padding: 0;
     text-align: left;
     line-height: normal;
     vertical-align: middle;
@@ -51,13 +60,18 @@ body {
 
 .avatar {
     display: inline-block;
-    max-width: 50px;
+    width: 38px;
+    aspect-ratio: 1;
+
     border-radius: 50%;
     background: #ccc;
     vertical-align: middle;
+
+    padding: 0;
+    margin: 0;
 }
 
-.avatar-text-box{
+.avatar-text-box {
     display: inline-block;
     margin-left: 1em;
     vertical-align: middle;
@@ -66,12 +80,10 @@ body {
 
 .avatar-text-box h2 {
     margin: 0;
-    font-size: 1.2em;
 }
 
 .avatar-text-box p {
     margin: 0;
-    font-size: 1em;
 }
 
 .header-icon, .icon {
@@ -80,6 +92,9 @@ body {
     bottom: 0;
     right: .8em;
     margin: auto;
+
+    width: 24px;
+    aspect-ratio: 1;
 }
 
 .content-text {
@@ -107,4 +122,67 @@ body {
 
 .likes-box .likes {
     margin-left: .25rem;
+}
+
+.button-more {
+    background-color: #4974e9; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.content-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    /* 2 cards per row same in height */
+    .card {
+        float: left;
+        width: 45%;
+        /* height: 700px; */
+        height: 500px;
+    }
+
+    .card:nth-child(2n) {
+        margin-left: 1%;
+    }
+
+    .card-body {
+        height: 75%;
+    }
+
+}
+
+@media screen and (min-width: 993px) {
+    /* 4 cards per row same in height */
+
+    .card {
+        float: left;
+        height: 500px;
+        box-sizing: border-box;
+
+        width: 23.5%;
+        margin-left: calc((6%-8em)/3);
+    }
+
+    .card:nth-child(4n+1) {
+        margin-left: 0%;
+    }
+
+    .card-body{
+        height: 66%;
+    }
+
 }
