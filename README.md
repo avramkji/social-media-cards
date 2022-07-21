@@ -23,6 +23,12 @@ https://bugs.chromium.org/p/chromium/issues/detail?id=47416
 
 It would be awesome if you could share the solution with me.
 
+### SVG
+
+For this same reason I am not able to manipulate files locally, so unless I copy the SVG file's contents manually, I will be unable to build the heart interaction properly. 
+
+In my case I have done it using image tag
+
 ## Building the card elements
 
 While building the card elements I am using the `createElement` functionality, and setting `innerHTML` through a string in backticks. In my opinion this should not be done in practice because it's leaving us vulnerable to `XSS` attacks. To avoid this vulnerability I am omitting the variable parts from the strings that I pass into `innerHTML`, I am instead adding the variable parts using `innerText`, all in accordance to the data you've provided, of course. 
