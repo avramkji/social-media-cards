@@ -1,10 +1,3 @@
-let card = document.querySelectorAll('.card-body img');
-card.forEach((el, i) => {
-    el.addEventListener('click', function() {
-        create_modal(i);
-    });
-});
-
 const create_modal = (i) => {
     let body = document.querySelector('body');
     let cardModal = document.createElement('div');
@@ -46,13 +39,9 @@ const create_modal = (i) => {
         </div>
    
     </div>`
-    console.log(data[i]);
-
-    // cardModal.querySelector('.modal-title').innerText = data[i].name;
     cardModal.querySelector('.avatar').src = data[i].profile_image;
     cardModal.querySelector('.avatar-name').innerText = data[i].name;
     cardModal.querySelector('.avatar-date').src = data[i].date;
-    // choose icon based on source_type string.
     switch (data[i].source_type) {
         case "facebook":
             cardModal.querySelector('.icon').src = "./assets/facebook.svg";
@@ -65,9 +54,5 @@ const create_modal = (i) => {
     cardModal.querySelector('.modal-caption').innerText = data[i].caption;
     cardModal.querySelector('.likes').innerText = data[i].likes;
     cardModal.querySelector('.heart').src = "./assets/heart.svg";
-    cardModal.querySelector('.close').addEventListener('click', () => {
-            cardModal.style.display = "none";
-        })
-        // return modal;
 
 }

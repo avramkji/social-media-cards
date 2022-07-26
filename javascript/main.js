@@ -45,6 +45,7 @@ const create_card_body = (card_image, caption) => {
     </div>`
 
     card_body.querySelector('img').src = card_image;
+    card_body.querySelector('img').setAttribute('data-index', counter);
     card_body.querySelector('.content-text').innerText = caption;
 
     return card_body;
@@ -103,11 +104,6 @@ const load_more = () => {
         setTimeout(() => {
             window.scrollTo(0, document.body.scrollHeight);
             let card = document.querySelectorAll('.card-body img');
-            card.forEach((el, i) => {
-                el.addEventListener('click', function() {
-                    create_modal(i);
-                });
-            });
         }, 250);
     }
 }
@@ -125,11 +121,14 @@ const post_liked = (target) => {
 
 }
 
+
 window.onclick = (event) => {
     if (event.target.classList.contains('button-more')) {
+        if (counter+increment >= data.length) {
+            event.target.remove();
+        }
         load_more();
     }
-    console.log(event.currentTarget);
     if (event.target.classList.contains('heart')) {
         
         post_liked(event.target);
@@ -141,12 +140,7 @@ window.onclick = (event) => {
         body.removeChild(overlay);
         body.removeChild(modal);
     }
-
-
-
+    if(event.target.hasAttribute('data-index')){
+        create_modal(event.target.getAttribute('data-index'));
+    }
 }
-
-
-
-// [] - remove "load more" button when there are no more cards to load
-// [] - create a modal window which should be opened when the user clicks on any card
